@@ -204,11 +204,13 @@ body {
 }
 
 @layer components {
+  /* Custom ditambah 24 px untuk padding nya */
   .custom-container {
     margin: 0 auto;
     @apply max-w-302 pr-6 pl-6;
   }
 }
+
 /* @layer components {
   .custom-container {
     margin-left: auto;
