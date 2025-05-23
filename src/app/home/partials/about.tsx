@@ -5,7 +5,7 @@ import CornerAccent from '@/components/ui/corner-accent';
 
 const AboutSection = () => {
   return (
-    <section className='relative w-full overflow-visible bg-black pt-10 md:pt-0'>
+    <section className='relative min-h-150 w-full overflow-visible bg-black pt-10 md:pt-0'>
       <div className='pointer-events-none absolute inset-0 z-0 hidden md:block'>
         {/* Kiri */}
         <div className='absolute -top-2 left-75 h-44 w-60'>

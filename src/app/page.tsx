@@ -8,8 +8,8 @@ import Navbar from './home/partials/navbar';
 // import PortofolioSection from './home/partials/portofolio';
 import ServiceSection from './home/partials/service';
 import SkillSection from './home/partials/skill';
+import WorkingSection from './home/partials/working';
 // import TestimonialSection from './home/partials/testimonial';
-// import WorkingSection from './home/partials/working';
 
 const Home = () => {
   return (
@@ -19,8 +19,8 @@ const Home = () => {
       <ServiceSection />
       <AboutSection />
       <SkillSection />
-      {/* <WorkingSection />
-      <ExperienceSection />
+      <WorkingSection />
+      {/* <ExperienceSection />
       <PortofolioSection />
       <TestimonialSection />
       <FAQSection />
