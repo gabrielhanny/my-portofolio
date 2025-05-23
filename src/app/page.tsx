@@ -16,7 +16,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Hero />
-      <ServiceSection />
+      {/* <ServiceSection />
       <AboutSection />
       <SkillSection />
       <WorkingSection />
@@ -25,7 +25,7 @@ const Home = () => {
       <TestimonialSection />
       <FAQSection />
       <ContactSection />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };

@@ -72,8 +72,8 @@
   --color-primary-400: #1d3300;
 
   /* Base Colors */
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-base-white: #ffffff;
+  --color-base-black: #000000;
 
   /*Radius*/
   --radius-none: 0rem; /* 0px */
