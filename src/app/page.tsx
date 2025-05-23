@@ -7,7 +7,7 @@ import Hero from './home/partials/hero';
 import Navbar from './home/partials/navbar';
 // import PortofolioSection from './home/partials/portofolio';
 import ServiceSection from './home/partials/service';
-// import SkillSection from './home/partials/skill';
+import SkillSection from './home/partials/skill';
 // import TestimonialSection from './home/partials/testimonial';
 // import WorkingSection from './home/partials/working';
 
@@ -18,8 +18,8 @@ const Home = () => {
       <Hero />
       <ServiceSection />
       <AboutSection />
-      {/* <SkillSection />
-      <WorkingSection />
+      <SkillSection />
+      {/* <WorkingSection />
       <ExperienceSection />
       <PortofolioSection />
       <TestimonialSection />
