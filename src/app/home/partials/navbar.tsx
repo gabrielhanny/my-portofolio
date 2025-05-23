@@ -33,9 +33,9 @@ const Navbar = () => {
   return (
     <motion.header
       style={{ background, backdropFilter: backdropBlur }}
-      className='fixed top-0 z-80 w-full'
+      className='fixed top-0 right-0 left-0 z-50 w-full border-b border-neutral-800'
     >
-      <div className='flex-between custom-container h-20 max-w-[1200px] px-[18px] md:px-[120px]'>
+      <div className='flex-between custom-container h-20'>
         {/* KIRI: Garis + Nama */}
         {/* Logo Area */}
         {/* DESKTOP */}

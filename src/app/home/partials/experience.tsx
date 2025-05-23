@@ -7,7 +7,7 @@ import { experiences } from '@/constants/experience-data';
 const ExperienceSection = () => {
   return (
     <section className='w-full bg-black px-4 pt-10 md:px-0 md:pt-30'>
-      <div className='mx-auto w-full max-w-[393px] md:max-w-[1200px]'>
+      <div className='mx-auto w-full max-w-[393px] md:max-w-300'>
         {/* Header */}
         <div className='mb-10 flex flex-col items-center justify-center text-center'>
           <span className='text-primary-200 text-md mb-2 font-medium md:text-xl'>
