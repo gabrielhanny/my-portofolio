@@ -5,121 +5,103 @@ import CornerAccent from '@/components/ui/corner-accent';
 
 const AboutSection = () => {
   return (
-    <section className='w-fullpx-4 relative min-h-[600px] pt-10 md:px-0 md:pt-30'>
-      {/* DIV WRAPPER */}
-      <div className='relative mx-auto w-full md:max-w-[1200px]'>
-        {/* HEADER */}
-        <div className='relative flex w-full flex-col items-center justify-center text-center'>
-          {/* Floating IMAGES (DESKTOP) */}
-          <div className='hidden md:block'>
-            <div
-              className='absolute z-10 h-[178px] w-[238px]'
-              style={{ top: '35px', left: '20px' }}
-            >
-              <Image
-                src='/images/image_satu.png'
-                alt='image1'
-                width={238}
-                height={178}
-                className='rounded-lg object-cover'
-              />
-            </div>
-            <div
-              className='absolute z-10 h-[187px] w-[250px]'
-              style={{ top: '30px', left: '970px' }}
-            >
-              <Image
-                src='/images/image_dua.png'
-                alt='image2'
-                width={250}
-                height={187}
-                className='rounded-lg object-cover'
-              />
-            </div>
-            <div
-              className='absolute z-40 h-[88px] w-[117px]'
-              style={{ top: '190px', left: '830px' }}
-            >
-              <Image
-                src='/images/image_tiga.png'
-                alt='image3'
-                width={117}
-                height={88}
-                className='rounded-lg object-cover'
-              />
-            </div>
-          </div>
+    <section className='relative min-h-157.5 w-full overflow-visible bg-black pt-10 md:pt-0'>
+      <div className='pointer-events-none absolute inset-0 z-0 hidden md:block'>
+        {/* Kiri */}
+        <div className='absolute -top-2 left-75 h-44 w-60'>
+          <Image
+            fill
+            src='/images/image_satu.png'
+            className='rounded-lg object-cover'
+            alt='img1'
+          />
+        </div>
+        {/* Kanan */}
+        <div className='absolute -top-2 right-55 h-48 w-64'>
+          <Image
+            fill
+            src='/images/image_dua.png'
+            className='rounded-lg object-cover'
+            alt='img2'
+          />
+        </div>
+        {/* Bawah */}
+        <div className='absolute top-47.5 right-123 h-22 w-29.25'>
+          <Image
+            fill
+            src='/images/image_tiga.png'
+            className='rounded-lg object-cover'
+            alt='img3'
+          />
+        </div>
+      </div>
 
-          {/* HEADER ON DESKTOP */}
-          <div className='hidden md:block'>
-            <span className='text-primary-200 pb-4 text-lg font-medium'>
-              ABOUT ME
-            </span>
-            <h2 className='text-neutral-25 display-2xl-extrabold pb-4'>
-              <span className='block'>CRAFTING SEAMLESS </span>
-              <span className='text-primary-200 block'>
-                HIGH-PERFORMANCE WEB
-              </span>{' '}
-              EXPERIENCES
-            </h2>
-          </div>
+      {/* ✅ WRAPPER untuk konten tengah */}
+      <div className='relative z-10 mx-auto hidden w-full max-w-360 px-4 md:block'>
+        <CornerAccent className='absolute bottom-0 left-0 z-0 hidden rotate-90 md:block' />
+        <div className='mx-auto max-w-296 text-center'>
+          <span className='text-primary-200 text-lg font-medium'>ABOUT ME</span>
+          <h2 className='display-2xl-extrabold text-neutral-25 mt-4'>
+            <span className='block'>CRAFTING SEAMLESS</span>
+            <span className='text-primary-200 block'>HIGH-PERFORMANCE WEB</span>
+            EXPERIENCES
+          </h2>
+        </div>
+        <p className='mx-auto mt-16 max-w-249 text-center text-xl leading-relaxed font-medium text-neutral-400'>
+          I love turning designs into interactive, high-performance websites.
+          With a keen eye for detail and a deep understanding of frontend
+          technologies, I create smooth and visually appealing user experiences.
+        </p>
+      </div>
 
-          {/* CornerAccent desktop */}
-          <CornerAccent className='absolute bottom-[-24px] left-0 hidden rotate-90 md:block' />
+      {/* HEADER ON MOBILE */}
+      <div className='w-full md:hidden'>
+        <span className='text-md text-primary-200 mb-4 block text-center font-medium'>
+          ABOUT ME
+        </span>
+        <h2 className='display-md-extrabold text-neutral-25 mb-4 text-center'>
+          <span className='block'>CRAFTING SEAMLESS</span>
+          <span className='text-primary-200 block'>HIGH-PERFORMANCE</span>
+          <span className='text-primary-200'>WEB</span> EXPERIENCES
+        </h2>
+      </div>
 
-          {/* HEADER ON MOBILE */}
-          <div className='w-full md:hidden'>
-            <span className='text-md text-primary-200 pb-4 font-medium'>
-              ABOUT ME
-            </span>
-            <h2 className='display-md-extrabold text-neutral-25 pb-4'>
-              <span className='block'>CRAFTING SEAMLESS </span>
-              <span className='text-primary-200 block'>
-                HIGH-PERFORMANCE
-              </span>{' '}
-              <span className='text-primary-200'>WEB</span> EXPERIENCES
-            </h2>
-          </div>
+      {/* PARAGRAPH */}
+      <p className='text-md-medium mx-auto max-w-80 text-center leading-relaxed text-neutral-400 md:hidden'>
+        I love turning designs into interactive, high-performance websites. With
+        a keen eye for detail and a deep understanding of frontend technologies,
+        I create smooth and visually appealing user experiences.
+      </p>
 
-          {/* ABOUT TEXT */}
-          <p className='text-md-medium w-full pt-4 text-neutral-400 md:pt-16 md:text-xl'>
-            I love turning designs into interactive, high-performance
-            websites.With a keen eye for detail and a deep
-            <br />
-            understanding of frontend technologies, I create smooth and visually
-            appealing user experiences.
-          </p>
+      {/* IMAGES */}
+      <div className='relative mt-10 flex flex-wrap items-start justify-center gap-4 md:hidden'>
+        <div className='relative h-31.75 w-42.5'>
+          <Image
+            src='/images/image_satu.png'
+            fill
+            alt='image1'
+            className='rounded object-cover'
+          />
+        </div>
+        <div className='relative h-24.75 w-33.5'>
+          <Image
+            src='/images/image_dua.png'
+            fill
+            alt='image2'
+            className='rounded object-cover'
+          />
+        </div>
+        <div className='relative h-25 w-33'>
+          <Image
+            src='/images/image_tiga.png'
+            fill
+            alt='image3'
+            className='rounded object-cover'
+          />
         </div>
 
-        {/* MOBILE IMAGES */}
-        <div className='relative mt-10 flex flex-wrap items-start justify-center gap-4 md:hidden'>
-          <div className='relative h-[127px] w-[170px]'>
-            <Image
-              src='/images/image_satu.png'
-              fill
-              alt='image1'
-              className='rounded object-cover'
-            />
-          </div>
-          <div className='relative h-[99px] w-[134px]'>
-            <Image
-              src='/images/image_dua.png'
-              fill
-              alt='image2'
-              className='rounded object-cover'
-            />
-          </div>
-          <div className='relative h-[100px] w-[132px]'>
-            <Image
-              src='/images/image_tiga.png'
-              fill
-              alt='image3'
-              className='rounded object-cover'
-            />
-          </div>
-          {/* CornerAccent mobile */}
-          <CornerAccent className='absolute bottom-0 left-0 rotate-90' />
-        </div>
+        {/* CornerAccent */}
+        <CornerAccent className='absolute bottom-0 left-0 rotate-90' />
       </div>
     </section>
   );

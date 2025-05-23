@@ -64,7 +64,7 @@ const Hero = () => {
       </div>
 
       {/* DIV KANAN */}
-      <div className='relative z-10 h-116.5 w-full overflow-hidden md:ml-107 md:h-[873.61px] md:max-w-[660.14px]'>
+      <div className='relative z-10 h-116.5 w-full overflow-hidden md:ml-120 md:h-[873.61px] md:max-w-[660.14px]'>
         {/* Overlay hitam bawah */}
         <div className='pointer-events-none absolute inset-0 z-30 bg-gradient-to-b from-transparent via-transparent to-black/90' />
         {/* Overlay hitam full untuk desktop */}
