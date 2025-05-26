@@ -211,14 +211,6 @@ body {
   }
 }
 
-/* @layer components {
-  .custom-container {
-    margin-left: auto;
-    margin-right: auto;
-    @apply w-full max-w-[1200px] px-[24px] md:px-[120px];
-  }
-} */
-
 @layer utilities {
   .flex-center {
     @apply flex items-center justify-center;

@@ -1,27 +1,34 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import { skillsIcon, skillBars } from '@/constants/skill-data';
 
-// SkillBar
 function SkillBar({ name, value }: { name: string; value: number }) {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   return (
-    <div className='mb-4 flex w-full items-center gap-2'>
-      {/* Bar */}
+    <div ref={ref} className='mb-4 flex w-full items-center gap-2'>
       <div className='relative h-12 flex-1 overflow-hidden rounded-xl'>
-        <div
-          className='absolute top-0 left-0 h-12 rounded-xl'
-          style={{
-            width: `${value}%`,
-            background:
-              'repeating-linear-gradient(135deg, #497A1A, #497A1A 8px, #5c941f 8px, #5c941f 16px)',
-          }}
-        />
+        {inView && (
+          <motion.div
+            className='absolute top-0 left-0 h-12 rounded-xl'
+            initial={{ width: 0 }}
+            animate={{ width: `${value}%` }}
+            transition={{ duration: 1 }}
+            style={{
+              background:
+                'repeating-linear-gradient(135deg, #497A1A, #497A1A 8px, #5c941f 8px, #5c941f 16px)',
+            }}
+          />
+        )}
         <div className='text-neutral-25 relative z-10 flex h-12 items-center pl-6 font-semibold'>
           {name}
         </div>
       </div>
-      {/* Persen */}
       <span className='text-neutral-25 w-12 text-right font-semibold'>
         {value}%
       </span>
@@ -31,11 +38,10 @@ function SkillBar({ name, value }: { name: string; value: number }) {
 
 const SkillSection = () => {
   return (
-    <section className='custom-container w-full bg-black px-4 pt-12.5 md:ml-100 md:px-0 md:pt-30'>
-      <div className='mx-auto w-full max-w-[393px] md:flex md:max-w-[1220px] md:items-start md:gap-20'>
-        {/* DIV KIRI: Header + Icons */}
+    <section className='custom-container w-full bg-black px-4 pt-12.5 md:px-0 md:pt-30'>
+      <div className='mx-auto w-full md:flex md:max-w-300 md:items-start md:gap-20'>
+        {/* KIRI: Header + Icons */}
         <div className='w-full md:w-1/2 md:max-w-[500px]'>
-          {/* HEADER */}
           <span className='text-primary-200 text-md block pb-2 font-medium md:text-lg'>
             SKILLS
           </span>
@@ -43,7 +49,6 @@ const SkillSection = () => {
             <span className='block'>SKILLS THAT BRING</span>
             <span className='block'>IDEAS TO LIFE</span>
           </h2>
-          {/* SKILL ICONS */}
           <div className='grid grid-cols-4 justify-items-center gap-x-4 gap-y-6 md:w-full md:grid-cols-4 md:grid-rows-2 md:gap-x-8 md:gap-y-8'>
             {skillsIcon.map((item) => (
               <div

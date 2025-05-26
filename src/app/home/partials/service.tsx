@@ -1,33 +1,37 @@
+'use client';
+
 import React from 'react';
 
 import ServiceCard from '@/components/ui/service-card';
 
 const ServiceSection = () => {
   return (
-    <section className='m-0 min-h-[700px] w-full p-0'>
-      <div className='custom-container pt-[10px] pl-[8px] md:pt-[30px]'>
+    <section className='min-h-175 w-full bg-black'>
+      <div className='custom-container pt-20 md:pt-19.75'>
         {/* HEADER */}
         <div className='flex flex-col md:flex-row md:items-start md:justify-between'>
-          <div className='flex flex-col items-start md:ml-20 md:w-1/2'>
+          {/* LEFT */}
+          <div className='flex flex-col items-start md:w-1/2'>
             <span className='text-primary-200 text-md font-medium uppercase md:text-lg'>
               SERVICE
             </span>
-            <h2 className='text-neutral-25 mt-2 text-[2rem] leading-tight font-extrabold md:text-[2.5rem]'>
+            <h2 className='text-neutral-25 display-md-extrabold md:display-2xl-extrabold mt-2 leading-tight'>
               <span className='block'>MY SERVICE</span>
               <span className='block'>EXPERTISE</span>
             </h2>
-            {/* Service Text on MOBILE */}
-            <div className='text-md mt-4 font-medium text-neutral-400 md:hidden'>
+
+            {/* MOBILE TEXT */}
+            <p className='text-md mt-4 font-medium text-neutral-400 md:hidden'>
               Creating modern, intuitive, and visually consistent
               <br />
               web experiences that align with industry
               <br />
               trends and user expectations.
-            </div>
+            </p>
           </div>
 
-          {/* Service Text on DESKTOP */}
-          <div className='hidden md:block md:w-126 md:max-w-none md:pt-[29px] md:text-right'>
+          {/* DESKTOP TEXT */}
+          <div className='hidden md:block md:w-125 md:pt-7 md:text-right'>
             <span className='text-xl font-medium whitespace-pre-line text-neutral-400'>
               Creating modern, intuitive, and visually consistent web
               experiences that align with industry trends and user expectations.
@@ -36,7 +40,7 @@ const ServiceSection = () => {
         </div>
 
         {/* SERVICE CARDS */}
-        <div className='mt-6 flex flex-col gap-6 bg-blue-700 md:mt-16 md:ml-20 md:flex-row md:gap-10'>
+        <div className='mt-10 flex flex-col gap-8 md:mt-16 md:flex-row md:gap-8'>
           <ServiceCard
             number='01'
             icon='/icons/monitor.svg'

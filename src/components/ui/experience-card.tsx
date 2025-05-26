@@ -33,38 +33,42 @@ const ExperienceCard = ({
         'ml-[60px] md:ml-0'
       )}
     >
-      {/* TAHUN + ICON (DESKTOP) */}
+      {/* Desktop: Tahun + logo pojok kanan */}
       <div className='flex items-center justify-between'>
         <span className='text-sm text-neutral-400 md:text-lg'>{period}</span>
-        <Image
-          src={icon}
-          alt={company}
-          width={114}
-          height={48}
-          className='hidden md:block'
-        />
+        {alignment !== 'mobile' && (
+          <Image
+            src={icon}
+            alt={company}
+            width={114}
+            height={48}
+            className='hidden md:block'
+          />
+        )}
       </div>
 
-      {/* TITLE + COMPANY */}
-      <div className='mt-2 flex items-center gap-2'>
+      {/* Title + Company */}
+      <div className='mt-2 flex flex-wrap items-center gap-2'>
         <span className='text-neutral-25 text-md font-bold md:text-xl'>
           {title}
         </span>
-        <span className={`${color} text-md font-bold md:text-xl`}>
+        <span className={cn(color, 'text-md font-bold md:text-xl')}>
           {company}
         </span>
       </div>
 
-      {/* ICON (MOBILE only) */}
-      <Image
-        src={icon}
-        alt={company}
-        width={76}
-        height={32}
-        className='mt-2 md:hidden'
-      />
+      {/* Mobile logo bawah title */}
+      {alignment === 'mobile' && (
+        <Image
+          src={icon}
+          alt={company}
+          width={76}
+          height={32}
+          className='mt-2 md:hidden'
+        />
+      )}
 
-      {/* DESKRIPSI */}
+      {/* Deskripsi */}
       <p className='md:text-md mt-2 text-sm text-neutral-400'>{description}</p>
     </div>
   );

@@ -59,18 +59,23 @@ const ContactSection = () => {
 
   return (
     <section className='w-full bg-black px-4 py-16 md:px-0 md:pt-30'>
-      <div className='mx-auto flex w-full max-w-[1200px] flex-col gap-10 md:flex-row md:items-start md:justify-between'>
+      <div className='custom-container flex flex-col gap-10 md:flex-row md:items-start md:justify-between'>
         {/* LEFT */}
-        <div className='relative mx-auto aspect-[3/4] w-full max-w-[400px] overflow-hidden rounded-xl'>
-          <Image
-            src='/images/manshadow.png'
-            alt='Gabriel Hanny'
-            fill
-            priority
-            className='object-cover'
-          />
-          <div className='absolute inset-0 z-10 bg-black/10' />
-          <div className='absolute bottom-[-32px] left-1/2 z-20 flex -translate-x-1/2 flex-col items-center'>
+        <div className='relative mx-auto flex w-full max-w-[400px] flex-col items-center md:justify-between'>
+          {/* IMAGE */}
+          <div className='relative aspect-[3/4] w-full overflow-hidden rounded-xl'>
+            <Image
+              src='/images/contactImage.png'
+              alt='Gabriel Hanny'
+              fill
+              priority
+              className='object-cover brightness-[.25] contrast-[.85]'
+            />
+            <div className='absolute inset-0 z-10 bg-black/70 mix-blend-multiply' />
+          </div>
+
+          {/* SOCIAL + NAME (no absolute!) */}
+          <div className='z-20 mt-6 flex flex-col items-center'>
             <div className='flex gap-4'>
               <div className='rounded-full bg-neutral-900 p-3'>
                 <Image
@@ -98,7 +103,7 @@ const ContactSection = () => {
               </div>
             </div>
             <p className='text-neutral-25 mt-2 font-bold'>Gabriel Hanny</p>
-            <p className='text-primary-400 flex items-center gap-2 text-sm'>
+            <p className='flex items-center gap-2 text-sm text-neutral-400'>
               <span className='bg-primary-200 inline-block h-2.5 w-2.5 rounded-full shadow-md' />
               Available for Work
             </p>
@@ -106,68 +111,77 @@ const ContactSection = () => {
         </div>
 
         {/* RIGHT: Form */}
-        <form
-          onSubmit={handleSubmit}
-          className='text-neutral-25 flex w-full flex-col gap-6 md:w-1/2'
-        >
-          <div className='space-y-1'>
-            <label htmlFor='name' className='font-semibold'>
-              Name
-            </label>
-            <input
-              type='text'
-              name='name'
-              placeholder='Your name'
-              value={form.name}
-              onChange={handleChange}
-              className='w-full rounded-md border border-neutral-700 bg-black px-4 py-3'
-            />
-            {errors.name && (
-              <p className='text-sm text-red-500'>{errors.name}</p>
-            )}
+        <div className='flex w-full flex-col gap-6 md:w-1/2'>
+          {/* HEADER */}
+          <div className='mb-4 text-start md:mb-8'>
+            <p className='text-primary-200 text-md font-medium md:text-lg'>
+              CONTACT
+            </p>
+            <h2 className='text-neutral-25 display-md-extrabold md:display-2xl-extrabold'>
+              LET’S GET IN TOUCH
+            </h2>
           </div>
 
-          <div className='space-y-1'>
-            <label htmlFor='email' className='font-semibold'>
-              Email
-            </label>
-            <input
-              type='email'
-              name='email'
-              placeholder='you@email.com'
-              value={form.email}
-              onChange={handleChange}
-              className='w-full rounded-md border border-neutral-700 bg-black px-4 py-3'
-            />
-            {errors.email && (
-              <p className='text-sm text-red-500'>{errors.email}</p>
-            )}
-          </div>
+          <form onSubmit={handleSubmit} className='flex flex-col gap-6'>
+            <div className='space-y-1'>
+              <label htmlFor='name' className='font-semibold'>
+                Name
+              </label>
+              <input
+                type='text'
+                name='name'
+                placeholder='Your name'
+                value={form.name}
+                onChange={handleChange}
+                className='w-full rounded-md border border-neutral-700 bg-black px-4 py-3'
+              />
+              {errors.name && (
+                <p className='text-sm text-red-500'>{errors.name}</p>
+              )}
+            </div>
 
-          <div className='space-y-1'>
-            <label htmlFor='message' className='font-semibold'>
-              Message
-            </label>
-            <textarea
-              name='message'
-              placeholder='Write your message...'
-              value={form.message}
-              onChange={handleChange}
-              rows={5}
-              className='w-full rounded-md border border-neutral-700 bg-black px-4 py-3'
-            />
-            {errors.message && (
-              <p className='text-sm text-red-500'>{errors.message}</p>
-            )}
-          </div>
+            <div className='space-y-1'>
+              <label htmlFor='email' className='font-semibold'>
+                Email
+              </label>
+              <input
+                type='email'
+                name='email'
+                placeholder='you@email.com'
+                value={form.email}
+                onChange={handleChange}
+                className='w-full rounded-md border border-neutral-700 bg-black px-4 py-3'
+              />
+              {errors.email && (
+                <p className='text-sm text-red-500'>{errors.email}</p>
+              )}
+            </div>
 
-          <button
-            type='submit'
-            className='bg-primary-200 mt-4 w-full rounded-full px-8 py-4 font-bold text-neutral-950 shadow-[0_0_32px_#91ff02] hover:shadow-[0_0_56px_#91ff02]'
-          >
-            Send Message
-          </button>
-        </form>
+            <div className='space-y-1'>
+              <label htmlFor='message' className='font-semibold'>
+                Message
+              </label>
+              <textarea
+                name='message'
+                placeholder='Write your message...'
+                value={form.message}
+                onChange={handleChange}
+                rows={5}
+                className='w-full rounded-md border border-neutral-700 bg-black px-4 py-3'
+              />
+              {errors.message && (
+                <p className='text-sm text-red-500'>{errors.message}</p>
+              )}
+            </div>
+
+            <button
+              type='submit'
+              className='bg-primary-200 mt-4 w-full rounded-full px-8 py-4 font-bold text-neutral-950 shadow-[0_0_32px_#91ff02] hover:shadow-[0_0_56px_#91ff02]'
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
 
       <SuccessDialog open={successOpen} onOpenChange={setSuccessOpen} />

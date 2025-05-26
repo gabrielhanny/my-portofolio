@@ -6,7 +6,7 @@ import { myExperiences, anotherExperiences } from '@/constants/working-data';
 
 const WorkingSection = () => (
   <section className='w-full bg-black px-4 pt-10 md:px-0 md:pt-30'>
-    <div className='mx-auto w-full max-w-[393px] md:max-w-[1220px]'>
+    <div className='custom-container'>
       {/* HEADER */}
       <div className='flex flex-col items-center justify-center text-center'>
         <span className='text-primary-200 mb-2 text-sm font-medium md:text-base'>
@@ -30,7 +30,7 @@ const WorkingSection = () => (
             height={60}
             className='mb-6 rounded-full'
           />
-          <div className='w-full md:text-left'>
+          <div className='w-full md:w-125 md:text-left'>
             {myExperiences.map((exp, i) => (
               <WorkingItem text={exp} key={i} />
             ))}
@@ -48,7 +48,7 @@ const WorkingSection = () => (
             height={60}
             className='mb-6 rounded-full bg-neutral-900'
           />
-          <div className='w-full md:text-left'>
+          <div className='w-full md:w-[500px] md:text-left'>
             {anotherExperiences.map((exp, i) => (
               <WorkingItem text={exp} muted key={i} />
             ))}

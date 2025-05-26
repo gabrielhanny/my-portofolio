@@ -14,29 +14,33 @@ const ServiceCard = ({
   description,
 }: ServiceCardProps) => {
   return (
-    <div
-      className='flex w-full flex-col items-start px-4 pt-4 pb-6 md:h-[306px] md:min-w-0 md:flex-1 md:p-6'
-      style={{ minHeight: '204px' }}
-    >
+    <div className='flex w-full flex-col items-start p-6 md:h-[306px] md:w-[373.33px]'>
       {/* Number */}
       <span className='text-md font-semibold text-neutral-400 md:text-xl'>
         {number}
       </span>
-      {/* Border card*/}
-      <div className='mt-4 mb-4 h-px w-full bg-neutral-600 md:mt-4 md:mb-6' />
+
+      {/* Border */}
+      <div className='mt-4 h-px w-full bg-neutral-600' />
+
+      {/* Spacer 24px */}
+      <div className='h-6' />
+
       {/* Icon */}
       <Image
         src={icon}
-        alt=''
+        alt='icon'
         width={27}
         height={24}
         className='mb-4'
         priority
       />
+
       {/* Title */}
-      <h3 className='text-neutral-25 mb-2 text-xl font-semibold md:text-lg'>
+      <h3 className='text-neutral-25 md:display-sm-semibold mb-2 text-xl font-semibold'>
         {title}
       </h3>
+
       {/* Description */}
       <p className='text-md text-neutral-400 md:text-xl'>{description}</p>
     </div>

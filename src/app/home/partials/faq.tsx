@@ -4,7 +4,7 @@ import faqs from '@/constants/faq-data';
 
 const FAQSection = () => (
   <section className='w-full bg-black px-4 pt-10 md:px-0 md:pt-30'>
-    <div className='mx-auto w-full max-w-[393px] md:max-w-[1200px]'>
+    <div className='custom-container'>
       {/* HEADER */}
       <div className='mb-10 flex flex-col items-center text-center'>
         <span className='text-primary-200 text-md font-medium md:text-lg'>
@@ -19,19 +19,20 @@ const FAQSection = () => (
         {faqs.map((faq, idx) => (
           <div
             key={idx}
-            className={`flex items-start gap-4 border-b border-neutral-800 py-6 md:border-0 md:py-8 ${
+            className={`flex items-start border-b border-neutral-800 py-6 md:border-0 md:py-8 ${
               idx % 2 === 0 ? 'md:border-r md:pr-8' : 'md:pl-8'
             } ${idx >= faqs.length - 2 ? 'border-b-0' : ''}`}
           >
-            <Image
-              src='/icons/greenStar.svg'
-              alt='star'
-              width={32}
-              height={32}
-              className='mt-2 shrink-0'
-            />
-            <div>
-              <div className='text-neutral-25 mb-2 text-lg font-bold md:text-xl'>
+            <div className='shrink-0 pt-1.5 md:pt-2'>
+              <Image
+                src='/icons/greenStar.svg'
+                alt='star'
+                width={32}
+                height={32}
+              />
+            </div>
+            <div className='pl-4'>
+              <div className='text-neutral-25 mb-2 text-lg font-bold md:mb-6 md:text-xl'>
                 {faq.question}
               </div>
               <div className='text-sm text-neutral-400 md:text-base'>

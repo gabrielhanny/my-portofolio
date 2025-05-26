@@ -35,7 +35,7 @@ const Navbar = () => {
       style={{ background, backdropFilter: backdropBlur }}
       className='fixed top-0 z-80 w-full'
     >
-      <div className='flex-between custom-container h-20 max-w-[1200px] px-[18px] md:px-[120px]'>
+      <div className='flex-between custom-container h-20'>
         {/* KIRI: Garis + Nama */}
         {/* Logo Area */}
         {/* DESKTOP */}

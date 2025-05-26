@@ -10,34 +10,46 @@ const CARDS_PER_PAGE = 4;
 
 const TestimonialSection = () => {
   const [currentPage, setCurrentPage] = useState(0);
+  const [smoothTransition, setSmoothTransition] = useState(true);
 
   const totalPages = Math.ceil(testimonials.length / CARDS_PER_PAGE);
   const startIdx = currentPage * CARDS_PER_PAGE;
   const currentCards = testimonials.slice(startIdx, startIdx + CARDS_PER_PAGE);
 
   const handleNext = () => {
-    setCurrentPage((prev) => (prev + 1) % totalPages);
+    setSmoothTransition(false);
+    setTimeout(() => {
+      setCurrentPage((prev) => (prev + 1) % totalPages);
+      setSmoothTransition(true);
+    }, 100);
   };
 
   const handlePrev = () => {
-    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+    setSmoothTransition(false);
+    setTimeout(() => {
+      setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+      setSmoothTransition(true);
+    }, 100);
   };
 
   return (
     <section className='w-full bg-black px-4 pt-10 md:px-0 md:pt-30'>
-      <div className='mx-auto w-full max-w-[393px] md:max-w-[1200px]'>
+      <div className='custom-container'>
         {/* HEADER */}
         <div className='mb-10 flex flex-col items-center justify-center text-center'>
           <span className='text-primary-200 text-md mb-2 font-medium md:text-lg'>
             TESTIMONIALS
           </span>
           <h2 className='display-md-extrabold md:display-2xl-extrabold text-neutral-25'>
-            PEOPLE SAYS ABOUT ME
+            <span className='block md:inline'>PEOPLE SAYS</span>
+            <span className='block md:inline'> ABOUT ME</span>
           </h2>
         </div>
 
         {/* CAROUSEL */}
-        <div className='mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10'>
+        <div
+          className={`mb-10 grid grid-cols-1 gap-6 transition-all duration-700 ease-in-out md:grid-cols-2 md:gap-10 ${smoothTransition ? 'opacity-100' : 'opacity-0'}`}
+        >
           {currentCards.map((item, idx) => (
             <TestimonialCard {...item} key={idx} />
           ))}
@@ -49,7 +61,6 @@ const TestimonialSection = () => {
             onClick={handlePrev}
             className='hover:border-primary-200 hover:text-primary-200 flex h-12 w-12 items-center justify-center rounded-full border-2 border-neutral-700 text-neutral-400 transition'
           >
-            {/* left arrow */}
             <svg
               width='20'
               height='20'
@@ -66,7 +77,6 @@ const TestimonialSection = () => {
             onClick={handleNext}
             className='border-primary-200 bg-primary-200 flex h-12 w-12 items-center justify-center rounded-full border-2 text-neutral-950 shadow-[0_0_16px_#91ff02] transition hover:scale-105'
           >
-            {/* right arrow */}
             <svg
               width='20'
               height='20'
