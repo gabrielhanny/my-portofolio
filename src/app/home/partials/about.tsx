@@ -3,7 +3,7 @@ import React from 'react';
 
 const AboutSection = () => {
   return (
-    <section className='w-full px-4 pt-10 md:px-0 md:pt-30'>
+    <section id='AboutSection' className='w-full px-4 pt-10 md:px-0 md:pt-30'>
       <div className='relative mx-auto w-full max-w-300'>
         {/* FLOATING IMAGES - z-0: back layer */}
         <div className='pointer-events-none absolute inset-0 z-0 hidden md:block'>

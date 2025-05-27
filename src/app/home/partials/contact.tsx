@@ -58,7 +58,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section className='w-full bg-black px-4 py-16 md:px-0 md:pt-30'>
+    <section
+      id='ContactSection'
+      className='w-full bg-black px-4 py-16 md:px-0 md:pt-30'
+    >
       <div className='custom-container flex flex-col gap-10 md:flex-row md:items-start md:justify-between'>
         {/* LEFT */}
         <div className='relative mx-auto flex w-full max-w-[400px] flex-col items-center md:justify-between'>

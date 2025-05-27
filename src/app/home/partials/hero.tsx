@@ -10,8 +10,8 @@ import HeroProfile from '@/components/ui/hero-profile';
 const Hero = () => {
   return (
     <section
+      id='Hero'
       className='custom-container border-0.25 relative flex flex-wrap overflow-hidden border-neutral-800 md:border-b lg:h-218'
-      id='home'
     >
       <div
         className='absolute inset-y-0 w-0.25 bg-neutral-800'
