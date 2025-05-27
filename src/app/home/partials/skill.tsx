@@ -38,7 +38,10 @@ function SkillBar({ name, value }: { name: string; value: number }) {
 
 const SkillSection = () => {
   return (
-    <section className='custom-container w-full bg-black px-4 pt-12.5 md:px-0 md:pt-30'>
+    <section
+      id='SkillSection'
+      className='custom-container w-full bg-black px-4 pt-12.5 md:px-0 md:pt-30'
+    >
       <div className='mx-auto w-full md:flex md:max-w-300 md:items-start md:gap-20'>
         {/* KIRI: Header + Icons */}
         <div className='w-full md:w-1/2 md:max-w-[500px]'>

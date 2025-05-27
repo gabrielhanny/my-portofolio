@@ -3,7 +3,10 @@ import Image from 'next/image';
 import faqs from '@/constants/faq-data';
 
 const FAQSection = () => (
-  <section className='w-full bg-black px-4 pt-10 md:px-0 md:pt-30'>
+  <section
+    id='FAQSection'
+    className='w-full bg-black px-4 pt-10 md:px-0 md:pt-30'
+  >
     <div className='custom-container'>
       {/* HEADER */}
       <div className='mb-10 flex flex-col items-center text-center'>

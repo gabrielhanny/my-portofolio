@@ -9,7 +9,10 @@ import { experiences } from '@/constants/experience-data';
 
 const ExperienceSection = () => {
   return (
-    <section className='w-full bg-black px-4 pt-10 md:px-0 md:pt-30'>
+    <section
+      id='ExperienceSection'
+      className='w-full bg-black px-4 pt-10 md:px-0 md:pt-30'
+    >
       <div className='custom-container'>
         {/* HEADER */}
         <div className='mb-10 flex flex-col items-center justify-center text-center'>
@@ -38,7 +41,7 @@ const ExperienceSection = () => {
                 {idx !== 0 && (
                   <motion.div
                     initial={{ height: 0 }}
-                    whileInView={{ height: 48 }}
+                    whileInView={{ height: 240 }}
                     transition={{ duration: 0.6 }}
                     className='w-px bg-neutral-700'
                   />
@@ -53,7 +56,7 @@ const ExperienceSection = () => {
                 {idx < experiences.length - 1 && (
                   <motion.div
                     initial={{ height: 0 }}
-                    whileInView={{ height: 48 }}
+                    whileInView={{ height: 240 }}
                     transition={{ duration: 0.6 }}
                     className='w-px bg-neutral-700'
                   />
@@ -79,7 +82,7 @@ const ExperienceSection = () => {
                 {idx !== 0 && (
                   <motion.div
                     initial={{ height: 0 }}
-                    whileInView={{ height: 32 }}
+                    whileInView={{ height: 340 }}
                     transition={{ duration: 0.5 }}
                     className='w-px bg-neutral-700'
                   />
@@ -90,7 +93,7 @@ const ExperienceSection = () => {
                 {idx < experiences.length - 1 && (
                   <motion.div
                     initial={{ height: 0 }}
-                    whileInView={{ height: 32 }}
+                    whileInView={{ height: 340 }}
                     transition={{ duration: 0.5 }}
                     className='w-px bg-neutral-700'
                   />
